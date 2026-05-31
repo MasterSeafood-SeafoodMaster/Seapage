@@ -22,7 +22,7 @@ function parseSortKey(period: string): number {
 
 export default function Timeline({ entries }: { entries: TimelineEntry[] }) {
 	const sorted = [...entries].sort(
-		(a, b) => parseSortKey(a.period) - parseSortKey(b.period),
+		(a, b) => parseSortKey(b.period) - parseSortKey(a.period),
 	);
 
 	return (

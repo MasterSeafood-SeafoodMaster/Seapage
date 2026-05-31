@@ -4,6 +4,7 @@ import { motion } from "motion/react";
 import type { TimelineEntry } from "@/components/Timeline";
 import Timeline from "@/components/Timeline";
 import { education, experience } from "@/lib/profile-data";
+import { Section, SectionHeading } from "./shared";
 
 const entries: TimelineEntry[] = [
 	...education.map((e) => ({
@@ -23,25 +24,22 @@ const entries: TimelineEntry[] = [
 	})),
 ];
 
-export default function Experience() {
+export default function ExperienceSection() {
 	return (
-		<div className="mx-auto max-w-3xl px-6 py-24">
-			<motion.div
+		<Section id="experience">
+			<SectionHeading>Experience</SectionHeading>
+			<motion.p
 				initial={{ opacity: 0, y: 20 }}
-				animate={{ opacity: 1, y: 0 }}
-				transition={{ duration: 0.5, ease: "easeOut" }}
+				whileInView={{ opacity: 1, y: 0 }}
+				viewport={{ once: true }}
+				transition={{ duration: 0.5, ease: "easeOut", delay: 0.1 }}
+				className="mt-2 text-sm text-muted"
 			>
-				<h1 className="text-3xl font-light tracking-tight text-fg">
-					Experience
-				</h1>
-				<p className="mt-2 text-sm text-muted">
-					Education & professional journey
-				</p>
-			</motion.div>
-
+				Education & professional journey
+			</motion.p>
 			<div className="mt-16">
 				<Timeline entries={entries} />
 			</div>
-		</div>
+		</Section>
 	);
 }

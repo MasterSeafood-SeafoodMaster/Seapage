@@ -1,6 +1,6 @@
 export const profile = {
 	name: "蔡時富",
-	nameEn: "Seafood Tsai",
+	nameEn: "Shih-Fu Tsai",
 	title: "Software Engineer @ TSMC",
 	tagline: "Building software that bridges research and production",
 	bio: "Software engineer at TSMC with a background in neural networks, robotics, and information security research. Experienced in full-stack development, computer vision, and human-machine interfaces. Passionate about turning research ideas into practical, production-ready systems.",
@@ -36,6 +36,7 @@ export const education: EducationItem[] = [
 		field: "Computer Programming",
 		period: "2022 – 2024",
 		location: "Taoyuan, Taiwan",
+		logo: "/NCU.svg",
 	},
 	{
 		school: "National Dong Hwa University",
@@ -43,6 +44,7 @@ export const education: EducationItem[] = [
 		field: "Computer / Information Technology Administration and Management",
 		period: "2018 – 2022",
 		location: "Hualien, Taiwan",
+		logo: "/NDHU.png",
 	},
 ];
 
@@ -52,6 +54,7 @@ export const experience: ExperienceItem[] = [
 		role: "Software Engineer",
 		type: "Full-time",
 		period: "2024.10 – Present",
+		logo: "/Tsmc.svg.png",
 		duration: "1 yr 8 mos",
 		location: "Hsinchu, Taiwan",
 		description: "",
@@ -61,6 +64,7 @@ export const experience: ExperienceItem[] = [
 		role: "Research Assistant",
 		type: "Part-time",
 		period: "2022.09 – 2024.08",
+		logo: "/NCU.svg",
 		duration: "2 yrs",
 		location: "Taoyuan, Taiwan (Hybrid)",
 		description:
@@ -74,12 +78,14 @@ export const experience: ExperienceItem[] = [
 		duration: "2 mos",
 		location: "Taipei, Taiwan (Remote)",
 		description: "",
+		logo: "/HPE.png",
 	},
 	{
 		company: "National Dong Hwa University",
 		role: "Research Assistant",
 		type: "Part-time",
 		period: "2019.09 – 2022.07",
+		logo: "/NDHU.png",
 		duration: "2 yrs 11 mos",
 		location: "Hualien, Taiwan (Hybrid)",
 		description:

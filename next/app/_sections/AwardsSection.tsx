@@ -3,19 +3,21 @@
 import { motion } from "motion/react";
 import AwardCard from "@/components/AwardCard";
 import { awards } from "@/lib/profile-data";
+import { Section, SectionHeading } from "./shared";
 
-export default function Awards() {
+export default function AwardsSection() {
 	return (
-		<div className="mx-auto max-w-2xl px-6 py-24">
-			<motion.div
+		<Section id="awards">
+			<SectionHeading>Awards</SectionHeading>
+			<motion.p
 				initial={{ opacity: 0, y: 20 }}
-				animate={{ opacity: 1, y: 0 }}
-				transition={{ duration: 0.5, ease: "easeOut" }}
+				whileInView={{ opacity: 1, y: 0 }}
+				viewport={{ once: true }}
+				transition={{ duration: 0.5, ease: "easeOut", delay: 0.1 }}
+				className="mt-2 text-sm text-muted"
 			>
-				<h1 className="text-3xl font-light tracking-tight text-fg">Awards</h1>
-				<p className="mt-2 text-sm text-muted">Honors & recognition</p>
-			</motion.div>
-
+				Honors & recognition
+			</motion.p>
 			<div className="mt-12 grid gap-4 sm:grid-cols-2">
 				{awards.map((award, i) => (
 					<AwardCard
@@ -29,6 +31,6 @@ export default function Awards() {
 					/>
 				))}
 			</div>
-		</div>
+		</Section>
 	);
 }
