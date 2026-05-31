@@ -1,0 +1,41 @@
+name: Deploy Next.js to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main # 偵測當 main 分支有 push 時觸發
+
+# 賦予這個工作流寫入 GitHub Pages 的權限
+permissions:
+  contents: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. 複製 GitHub 儲存庫的程式碼到虛擬機上
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # 2. 設定 Node.js 環境
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-size: 20
+          cache: 'npm' # 自動快取 node_modules，加速之後的打包
+
+      # 3. 安裝相依套件
+      - name: Install dependencies
+        run: npm ci
+
+      # 4. 編譯並導出靜態檔案 (會產生 out 資料夾)
+      - name: Build Next.js
+        run: npm run build
+
+      # 5. 部署到 GitHub Pages
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: out # Next.js 靜態導出的資料夾名稱
+          branch: gh-pages # 部署到的目標分支（動作會自動建立）
