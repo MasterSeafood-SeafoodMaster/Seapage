@@ -2,6 +2,7 @@
 
 import { motion } from "motion/react";
 import Image from "next/image";
+import { img } from "@/lib/path";
 
 export default function HeroSection() {
 	return (
@@ -16,7 +17,7 @@ export default function HeroSection() {
 					transition={{ duration: 0.6, ease: "easeOut" }}
 				>
 					<Image
-						src="/photo.jfif"
+						src={img("/photo.jfif")}
 						alt="蔡時富"
 						width={120}
 						height={120}
