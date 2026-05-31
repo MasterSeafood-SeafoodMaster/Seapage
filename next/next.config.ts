@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
 	images: {
 		unoptimized: true,
 	},
-	basePath: "/seapage",
+	basePath: "/Seapage",
 };
 
 export default nextConfig;
