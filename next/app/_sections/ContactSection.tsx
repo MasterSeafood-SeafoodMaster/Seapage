@@ -3,6 +3,7 @@
 import { motion } from "motion/react";
 import Image from "next/image";
 import { profile } from "@/lib/profile-data";
+import { img } from "@/lib/path";
 import { Section, SectionHeading } from "./shared";
 
 export default function ContactSection() {
@@ -32,7 +33,7 @@ export default function ContactSection() {
 					className="flex items-center gap-3 rounded-full border border-border px-6 py-3 text-sm text-fg transition-colors hover:border-fg"
 				>
 					<Image
-						src="/icons/linkedin.svg"
+						src={img("/icons/linkedin.svg")}
 						alt="LinkedIn"
 						width={16}
 						height={16}
@@ -47,7 +48,7 @@ export default function ContactSection() {
 					className="flex items-center gap-3 rounded-full border border-border px-6 py-3 text-sm text-fg transition-colors hover:border-fg"
 				>
 					<Image
-						src="/icons/github.svg"
+						src={img("/icons/github.svg")}
 						alt="GitHub"
 						width={16}
 						height={16}
