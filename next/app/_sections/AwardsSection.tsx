@@ -2,6 +2,7 @@
 
 import { motion } from "motion/react";
 import AwardCard from "@/components/AwardCard";
+import { fadeUp } from "@/lib/animation";
 import { awards } from "@/lib/profile-data";
 import { Section, SectionHeading } from "./shared";
 
@@ -10,10 +11,8 @@ export default function AwardsSection() {
 		<Section id="awards">
 			<SectionHeading>Awards</SectionHeading>
 			<motion.p
-				initial={{ opacity: 0, y: 20 }}
-				whileInView={{ opacity: 1, y: 0 }}
-				viewport={{ once: true }}
-				transition={{ duration: 0.5, ease: "easeOut", delay: 0.1 }}
+				{...fadeUp}
+				transition={{ ...fadeUp.transition, delay: 0.1 }}
 				className="mt-2 text-sm text-muted"
 			>
 				Honors & recognition

@@ -3,6 +3,7 @@
 import { motion } from "motion/react";
 import Logo from "@/components/Logo";
 import SkillTag from "@/components/SkillTag";
+import { fadeUp } from "@/lib/animation";
 import { education, profile, skills } from "@/lib/profile-data";
 import { Section, SectionHeading } from "./shared";
 
@@ -11,20 +12,16 @@ export default function AboutSection() {
 		<Section id="about">
 			<SectionHeading>About</SectionHeading>
 			<motion.p
-				initial={{ opacity: 0, y: 20 }}
-				whileInView={{ opacity: 1, y: 0 }}
-				viewport={{ once: true }}
-				transition={{ duration: 0.5, ease: "easeOut", delay: 0.1 }}
+				{...fadeUp}
+				transition={{ ...fadeUp.transition, delay: 0.1 }}
 				className="mt-6 leading-relaxed text-fg/80"
 			>
 				{profile.bio}
 			</motion.p>
 
 			<motion.h3
-				initial={{ opacity: 0, y: 20 }}
-				whileInView={{ opacity: 1, y: 0 }}
-				viewport={{ once: true }}
-				transition={{ duration: 0.5, ease: "easeOut", delay: 0.15 }}
+				{...fadeUp}
+				transition={{ ...fadeUp.transition, delay: 0.15 }}
 				className="mt-12 text-xl font-light tracking-tight text-fg"
 			>
 				Education
@@ -33,9 +30,7 @@ export default function AboutSection() {
 				{education.map((item) => (
 					<motion.div
 						key={item.school}
-						initial={{ opacity: 0, y: 16 }}
-						whileInView={{ opacity: 1, y: 0 }}
-						viewport={{ once: true }}
+						{...fadeUp}
 						transition={{ duration: 0.4, ease: "easeOut" }}
 						className="flex items-start gap-3"
 					>
@@ -52,10 +47,8 @@ export default function AboutSection() {
 			</div>
 
 			<motion.h3
-				initial={{ opacity: 0, y: 20 }}
-				whileInView={{ opacity: 1, y: 0 }}
-				viewport={{ once: true }}
-				transition={{ duration: 0.5, ease: "easeOut", delay: 0.2 }}
+				{...fadeUp}
+				transition={{ ...fadeUp.transition, delay: 0.2 }}
 				className="mt-12 text-xl font-light tracking-tight text-fg"
 			>
 				Skills

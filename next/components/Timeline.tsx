@@ -27,7 +27,7 @@ export default function Timeline({ entries }: { entries: TimelineEntry[] }) {
 
 	return (
 		<div className="relative">
-			<div className="absolute left-1/2 top-0 bottom-0 w-px -translate-x-1/2 bg-border" />
+			<div className="absolute left-6 sm:left-1/2 top-0 bottom-0 w-px sm:-translate-x-1/2 bg-border" />
 			<div className="space-y-12">
 				{sorted.map((entry, i) => {
 					const isLeft = i % 2 === 0;
@@ -36,25 +36,23 @@ export default function Timeline({ entries }: { entries: TimelineEntry[] }) {
 							key={`${entry.title}-${entry.period}`}
 							initial={{ opacity: 0, x: isLeft ? -24 : 24 }}
 							whileInView={{ opacity: 1, x: 0 }}
-							viewport={{ once: true, margin: "-60px" }}
+							viewport={{ margin: "-60px" }}
 							transition={{
 								duration: 0.5,
 								ease: "easeOut",
 								delay: i * 0.08,
 							}}
-							className={`relative flex w-full ${isLeft ? "justify-start" : "justify-end"}`}
+							className={`relative flex w-full ${isLeft ? "sm:justify-start" : "sm:justify-end"} justify-start`}
 						>
 							<div
-								className={`flex w-[calc(50%-2rem)] items-start gap-3 ${
+								className={`flex items-start gap-3 w-full sm:w-[calc(50%-2rem)] ${
 									isLeft
-										? "flex-row pr-8 text-right"
-										: "flex-row-reverse pl-8 text-left"
-								}`}
+										? "sm:flex-row sm:pr-8 sm:text-right"
+										: "sm:flex-row-reverse sm:pl-8 sm:text-left"
+								} flex-row pl-14 sm:pl-0 text-left`}
 							>
 								<Logo src={entry.logo} alt={entry.title} size={44} />
-								<div
-									className={`flex-1 ${isLeft ? "text-right" : "text-left"}`}
-								>
+								<div className="flex-1 text-left">
 									<p className="text-xs text-muted">{entry.period}</p>
 									<p className="mt-1 font-medium text-fg">{entry.title}</p>
 									<p className="text-sm text-fg/70">{entry.subtitle}</p>

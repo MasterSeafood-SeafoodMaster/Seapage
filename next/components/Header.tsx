@@ -42,7 +42,7 @@ export default function Header() {
 
 	return (
 		<header className="fixed top-0 left-0 right-0 z-50 bg-bg/80 backdrop-blur-md">
-			<nav className="mx-auto flex max-w-4xl items-center justify-between px-6 py-4">
+			<nav className="mx-auto flex max-w-3xl lg:max-w-5xl xl:max-w-6xl items-center justify-between px-6 py-4">
 				<button
 					type="button"
 					onClick={() => scrollTo("hero")}
@@ -50,7 +50,7 @@ export default function Header() {
 				>
 					ST
 				</button>
-				<ul className="flex items-center gap-6">
+				<ul className="flex items-center gap-4 sm:gap-6">
 					{sections.map((section) => (
 						<li key={section.id}>
 							<button

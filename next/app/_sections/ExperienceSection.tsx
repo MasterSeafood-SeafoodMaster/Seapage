@@ -3,6 +3,7 @@
 import { motion } from "motion/react";
 import type { TimelineEntry } from "@/components/Timeline";
 import Timeline from "@/components/Timeline";
+import { fadeUp } from "@/lib/animation";
 import { education, experience } from "@/lib/profile-data";
 import { Section, SectionHeading } from "./shared";
 
@@ -29,10 +30,8 @@ export default function ExperienceSection() {
 		<Section id="experience">
 			<SectionHeading>Experience</SectionHeading>
 			<motion.p
-				initial={{ opacity: 0, y: 20 }}
-				whileInView={{ opacity: 1, y: 0 }}
-				viewport={{ once: true }}
-				transition={{ duration: 0.5, ease: "easeOut", delay: 0.1 }}
+				{...fadeUp}
+				transition={{ ...fadeUp.transition, delay: 0.1 }}
 				className="mt-2 text-sm text-muted"
 			>
 				Education & professional journey

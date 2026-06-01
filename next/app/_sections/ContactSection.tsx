@@ -2,29 +2,26 @@
 
 import { motion } from "motion/react";
 import Image from "next/image";
-import { profile } from "@/lib/profile-data";
+import { fadeUp } from "@/lib/animation";
 import { img } from "@/lib/path";
+import { profile } from "@/lib/profile-data";
 import { Section, SectionHeading } from "./shared";
 
 export default function ContactSection() {
 	return (
-		<Section id="contact" className="pb-48">
+		<Section id="contact" className="pb-48 text-center">
 			<SectionHeading>Get in touch</SectionHeading>
 			<motion.p
-				initial={{ opacity: 0, y: 20 }}
-				whileInView={{ opacity: 1, y: 0 }}
-				viewport={{ once: true }}
-				transition={{ duration: 0.5, ease: "easeOut", delay: 0.1 }}
+				{...fadeUp}
+				transition={{ ...fadeUp.transition, delay: 0.1 }}
 				className="mt-3 text-sm text-muted"
 			>
 				Feel free to reach out on LinkedIn or GitHub
 			</motion.p>
 			<motion.div
-				initial={{ opacity: 0, y: 20 }}
-				whileInView={{ opacity: 1, y: 0 }}
-				viewport={{ once: true }}
-				transition={{ duration: 0.5, ease: "easeOut", delay: 0.15 }}
-				className="mt-10 flex flex-col gap-3 sm:flex-row"
+				{...fadeUp}
+				transition={{ ...fadeUp.transition, delay: 0.15 }}
+				className="mt-10 flex flex-col items-center gap-3 sm:flex-row sm:justify-center"
 			>
 				<a
 					href={profile.linkedin}
